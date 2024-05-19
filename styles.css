@@ -1,22 +1,104 @@
 :root {
-    --main-bg-color: black;
-    --main-font-color: bisque;
-    --standard-border-radius: 10px;
+    --main-bg-color: #2C3E50; /* Dark blue-gray for a mysterious ambiance */
+    --alt-bg-color: #34495E; /* Slightly lighter for contrast */
+    --main-font-color: #34495E; /* Light gray for readability */
+    --header-font-color: #D5DBDB; /* Slightly darker than main font color */
+    --standard-border-radius: 8px; /* Slightly reduced border radius for elegance */
     font-size: 16px;
 }
 
-html {
-    overflow: hidden;
-    height: 100%;
-}
-
 body {
-    overflow: scroll;
-    height: 100%;
+    color: var(--main-font-color);
+    background-color: var(--main-bg-color);
+    font-family: 'Garamond', serif; /* Elegant serif font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
+header {
+    color: var(--header-font-color);
+    background: var(--alt-bg-color);
+    padding: 20px;
+    text-align: center;
+}
 
-body, html {
+main {
+    padding: 20px;
+}
+
+.styled-select {
+    padding: 0.5em 1.5em;
+    border: 1.5px solid var(--header-font-color); /* Dark border for contrast */
+    border-radius: var(--standard-border-radius);
+    color: var(--header-font-color);
+    background-color: var(--alt-bg-color);
+    font-size: 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: auto;
+    min-width: 8vw;
+    max-width: 20vw;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for hover effects */
+}
+
+.styled-select:hover {
+    border-color: #888;
+    text-decoration: underline;
+    color: bisque; /* Change font color on hover */
+    background-color: var(--main-bg-color); /* Change background color on hover */
+}
+
+label[for="chapterSelect"] {
+    color: #888;
+    margin-right: 0.5vw;
+    font-family: 'Garamond', serif; /* Consistent font family with body */
+}
+
+section {
+    margin-top: 20px;
+    margin-bottom: 20vh;
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--standard-border-radius);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    opacity: 0; /* Initially hide sections */
+    transition: opacity 1.5s ease; /* Fade-in transition */
+}
+
+section.visible {
+    opacity: 1; /* Make section visible */
+}
+
+.hidden {
+    display: none;
+}
+
+/* .back-to-top-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--standard-border-radius);
+    background-color: var(--alt-bg-color);
     color: var(--main-font-color);
-    background-color: black;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
+
+.back-to-top-btn:hover {
+    background-color: #555; /* Darken background on hover */
+}
+
+footer {
+    background: var(--alt-bg-color);
+    color: var(--header-font-color);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
